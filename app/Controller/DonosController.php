@@ -1,26 +1,6 @@
 <?php
 class DonosController extends AppController {
    
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('add', 'logout', 'login');
-    }
-    
-    public function login() {
-        if ($this->request->is('post')) {
-            debug($this->request->data);
-            exit();
-            if ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirectUrl());
-            }
-            $this->Flash->error(__('Nome ou senha inválidos! Tente novamente!'));
-        }
-    }
-    
-    public function logout() {
-        return $this->redirect($this->Auth->logout());
-    }
-
     public function add() {
         if ($this->request->is('post')) {
             $this->Dono->create();
@@ -33,44 +13,26 @@ class DonosController extends AppController {
             );
         }
     }
-
-    public function edit($id = null) {
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-        if ($this->request->is('post') || $this->request->is('put')) {
-            if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
+    
+    public function login() {
+        if ($this->request->is('post')) {
+            if (!empty($this->request->data)) {
+                debug($this->request->data);
+                $password = md5($this->request->data['Dono']['password']);
+                $donoLogado = $this->Dono->find('first', array('conditions' => array('email' => $this->request->data['Dono']['email'], 'password' => $password)));
+                if (!empty($donoLogado)) {
+                    $this->Session->write('donoLogado', $donoLogado);
+                    $this->redirect('/animals/index');
+                }
+                $this->Flash->error(__('Nome ou senha inválidos! Tente novamente!'));
             }
-            $this->Flash->error(
-                __('The user could not be saved. Please, try again.')
-            );
-        } else {
-            $this->request->data = $this->User->findById($id);
-            unset($this->request->data['User']['password']);
+            
         }
     }
-
-    public function delete($id = null) {
-        // Prior to 2.5 use
-        // $this->request->onlyAllow('post');
-
-        $this->request->allowMethod('post');
-
-        $this->User->id = $id;
-        if (!$this->User->exists()) {
-            throw new NotFoundException(__('Invalid user'));
-        }
-        if ($this->User->delete()) {
-            $this->Flash->success(__('User deleted'));
-            return $this->redirect(array('action' => 'index'));
-        }
-        $this->Flash->error(__('User was not deleted'));
-        return $this->redirect(array('action' => 'index'));
+    
+    public function logout() {
+        $this->Session->delete('donoLogado');
+        $this->redirect('/entrar');
     }
-    
-    
 
 } 
