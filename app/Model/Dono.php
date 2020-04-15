@@ -17,7 +17,11 @@ class Dono extends AppModel {
         ),
         'email' => array(
             'email' => array('rule' => 'email','message' => 'E-mail inválido.'),
-            'isUnique' => array('rule' => 'isUnique', 'message' => 'E-mail já cadastrado!'),
+            'isUnique' => array(
+                'rule' => array('isUnique', array('email', 'deleted'), false),
+                'message' => 'E-mail já cadastrado.',
+                'on' => 'create'
+            ),
             'required' => array(
                 'rule' => 'notBlank',
                 'message' => 'Informe o seu E-mail para contato'
@@ -40,11 +44,7 @@ class Dono extends AppModel {
 
     public function beforeSave($options = array()) {
         if (isset($this->data['Dono']['password'])) {
-            $passwordHasher = new BlowfishPasswordHasher();
-            $this->data['Dono']['password'] = $passwordHasher->hash(
-                $this->data['Dono']['password']
-            );
-
+            $this->data['Dono']['password'] = md5($this->data['Dono']['password']);
         }
         
         return true;

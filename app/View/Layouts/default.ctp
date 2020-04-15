@@ -24,10 +24,8 @@ $cakeDescription = __d('cake_dev', 'Animal Finder');
 		echo $this->Html->css('bootstrap-grid.min');
 		echo $this->Html->css('bootstrap-reboot.min');
 		echo $this->Html->css('album');
-		//echo $this->Html->script('jquery');
 		echo $this->Html->script('jquery-1.11.1.min');
-		echo $this->Html->script('jquery.maskedinput.min');
-		echo $this->Html->script('bootstrap.min');
+        echo $this->Html->script('jquery.maskedinput.min');
 		echo $this->Html->script('bootstrap.bundle.min');
 		
 
@@ -36,9 +34,6 @@ $cakeDescription = __d('cake_dev', 'Animal Finder');
 </head>
 <body>
 <div id="content">
-
-	<?php echo $this->Flash->render(); ?>
-
 	<?php echo $this->fetch('content'); ?>
 </div>
 </body>
