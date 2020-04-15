@@ -9,7 +9,7 @@
         $botaoPerfil = $this->Html->div('btn-group',
             $this->Html->tag('button', 'Olá ' . $donoLogado['Dono']['nome'], array('type' => 'button', 'class' => 'btn btn-success dropdown-toggle', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')) .
             $this->Html->div('dropdown-menu', 
-                $this->Html->link('Meu Perfil', '/donos/edit/' . $donoLogado['Dono']['id'], array('class' => 'dropdown-item')) .
+                $this->Html->link('Alterar meus dados', '/donos/edit/' . $donoLogado['Dono']['id'], array('class' => 'dropdown-item')) .
                 $this->Html->div('dropdown-divider', '') .
                 $this->Html->link('Sair', '/donos/logout', array('class' => 'dropdown-item')) 
             )
