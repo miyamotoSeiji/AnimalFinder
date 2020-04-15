@@ -15,7 +15,6 @@ class DonoTest extends AppModelTestCase {
 
     public function testInvalidNome() {
         $this->assertEqualsInvalidField('nome', null);
-        $this->assertEqualsInvalidField('nome', 'Nome do Singular 1');
     }
 
     public function testInvalidEmail() {
