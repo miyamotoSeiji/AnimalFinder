@@ -126,6 +126,49 @@ No menu superior, após o login haverá o botão do usuário, "Olá 'Dono'", ao 
 - Alterar meus dados, onde o dono poderá realizar alterações nas suas informações
 - Sair, ao clicar o dono sairá do sistema e retornará para a página de login
 
+## Utilização da API para consulta de pets perdidos
+
+Foi criada uma função no Animals controller para servir como API REST, que retorna todos os pets perdidos cadastrados no bancode dados.
+
+Para utiliza-la basta acessar o endereço referente ao controller + apiConsulta + .json, em localhost ficaria assim:
+
+"localhost/AnimalFinder/animals/apiConsulta.json"
+
+O retorno será parecido com o exemplo abaixo:
+
+{
+    "animaisPerdidos": [
+        {
+            "Animal": {
+                "id": "1",
+                "dono_id": "1",
+                "foto": "fotototo.jpg",
+                "nome": "toto",
+                "idade": "1",
+                "info": "lkjsdfnslkjfdlksjflskajflksajflksajdfslak",
+                "cidade": "Mar\u00edlia",
+                "estado": "SP",
+                "status": "Perdido",
+                "anjo_nome": "Teste anjo",
+                "anjo_telefone": "(14) 996330891",
+                "created": "2020-04-16 04:53:22",
+                "modified": "2020-04-16 16:17:39",
+                "deleted": null
+            },
+            "Dono": {
+                "id": "1",
+                "nome": "Teste1",
+                "email": "t1@t.com",
+                "telefone": "(14)996330892",
+                "password": "81dc9bdb52d04dc20036dbd8313ed055",
+                "created": "2020-04-15 13:34:59",
+                "modified": "2020-04-15 14:33:56",
+                "deleted": null
+            }
+        }
+    ]
+}
+
 ## Issues e Melhorias
 
 Este projeto foi desenvolvido exclusivamanente como processo seletivo para a vaga de desenvolvedor, devido ao prazo estabelecido e falta de experiência, nem todas as funcionalidades estão funcionando 100%
@@ -136,13 +179,14 @@ Listarei nessa seção os problemas encontrados e melhorias que podem ser feitas
 	+ Validação no campo foto da entidade Animal, a validação para este campo não está funcionando, permitindo que o Dono realize a inclusão de qualquer tipo de arquivo, além de imagens
 	+ A versão Do XAMPP utilizada no desenvolvimento desse projeto foi a 3.2.4, dessa forma o PHP instalado está na versão 7.4.4, não sendo totalmente compativel com a versão do CakePHP 2.10.19, gerando problemas ao realizar os testes unitários. para solucionar o problema é romendado o uso do PHP na versão 5.6.4
 + Melhorias	
+	+ As mensagens de notificação poderiam desaparecer após alguns segundos, liberando espaço em tela
 	+ Utilização do dropzone.js no upload de imagens, dessa forma, além de facilitar o carregamento da foto, seria possível ter um preview da imagem
 	+ Trocar senha do Dono, devido a criptografia da senha, somente é possível a substituição da senha e não a alteração
 	+ Melhorias visuais, tanto nos formulários quanto nas páginas principais, foi utilizado o bootstrap, mas não foi possível aproveitar todo seu potêncial
 
 ## Considerações finais
 
-Gostaria de agradecer pela oportunidade de mostrar um pouquinho do meu conhecimento em programação, é claro que eu gostaria que o prazo fosse maior, mas entendo que na vida real nem sempre temos esse tempo e que precisamos nos virar com o que temos da melhor forma possível.
+Gostaria de agradecer pela oportunidade de mostrar um parte do meu conhecimento em programação, é claro que eu gostaria que o prazo fosse maior, mas entendo que na vida real nem sempre temos esse tempo e que precisamos nos virar com o que temos da melhor forma possível.
 
 Gostei muito de participar desse processo seletivo, reaprendi muitas coisas que há tempos não utilizava e aprendi coisas novas também. Caso tenha tempo, continuarei a desenvolver esse projeto como forma terapêutica, pois acima de tudo foi muito divertido!!! E Também sei que há muito a ser melhorado.
 
