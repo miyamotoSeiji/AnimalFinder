@@ -10,7 +10,7 @@ class DonosController extends AppController {
                     $this->Session->write('donoLogado', $donoLogado);
                     $this->redirect('/animals/index');
                 }
-                $this->Flash->error(__('Nome ou senha inválidos! Tente novamente!'));
+                $this->Flash->set('Nome ou senha inválidos! Tente novamente!', array('params' => array('class' => 'alert alert-danger')));
             }
             
         }
@@ -25,12 +25,10 @@ class DonosController extends AppController {
         if ($this->request->is('post')) {
             $this->Dono->create();
             if ($this->Dono->save($this->request->data)) {
-                $this->Flash->success(__('O cadastro foi salvo com sucesso!'));
+                $this->Flash->set('O cadastro foi salvo com sucesso!', array('params' => array('class' => 'alert alert-success')));
                 return $this->redirect(array('action' => 'login'));
             }
-            $this->Flash->error(
-                __('Não foi possível completar o cadastro!')
-            );
+            $this->Flash->set('Não foi possível completar o cadastro!', array('params' => array('class' => 'alert alert-danger')));
         }
     }
 
@@ -44,10 +42,10 @@ class DonosController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Dono->id = $id;
             if ($this->Dono->save($this->request->data)) {
-                $this->Flash->success(__('Dados Alterados.'));
+                $this->Flash->set(' Dados Alterados com sucesso.', array('params' => array('class' => 'alert alert-success')));
                 $this->redirect('/animals/index');
             }
-            $this->Flash->error(__('Não foi possível alterar.'));
+            $this->Flash->set('Não foi possível alterar.', array('params' => array('class' => 'alert alert-danger')));
         }
 
         if (!$this->request->data) {

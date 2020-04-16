@@ -49,7 +49,7 @@ class AnimalsController extends AppController {
                 $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
             }
             if ($this->Animal->save($this->request->data)) {
-                $this->Flash->success(__('O cadastro foi salvo com sucesso!'));
+                $this->Flash->set('O cadastro foi salvo com sucesso!', array('params' => array('class' => 'alert alert-success')));
                 $this->redirect('/animals/index');
             }
         } 
@@ -71,10 +71,10 @@ class AnimalsController extends AppController {
                 unset($this->request->data['Animal']['foto']);
             }
             if ($this->Animal->save($this->request->data)) {
-                $this->Flash->success(__('Dados Alterados.'));
+                $this->Flash->set('Dados Alterados.', array('params' => array('class' => 'alert alert-success')));
                 $this->redirect('/animals/index');
             }
-            $this->Flash->error(__('Não foi possível alterar.'));
+            $this->Flash->set('Não foi possível alterar.', array('params' => array('class' => 'alert alert-error')));
         }
 
         if (!$this->request->data) {
@@ -91,10 +91,10 @@ class AnimalsController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Animal->id = $id;
             if ($this->Animal->save($this->request->data)) {
-                $this->Flash->success(__('Comunicado!!!'));
+                $this->Flash->set('Comunicado!!!', array('params' => array('class' => 'alert alert-success')));
                 $this->redirect('/animals/index');
             }
-            $this->Flash->error(__('Não foi possível alterar.'));
+            $this->Flash->set('Não foi possível alterar.', array('params' => array('class' => 'alert alert-danger')));
         }
 
         if (!$this->request->data) {
