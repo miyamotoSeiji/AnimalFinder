@@ -119,4 +119,12 @@ class AnimalsController extends AppController {
         }
     }
     
+    public function apiConsulta() {
+        $animaisPerdidos = $this->Animal->find('all', array('conditions' => array('Animal.status' => 'Perdido')));
+        $this->set(array(
+            'animaisPerdidos' => $animaisPerdidos,
+            '_serialize' => array('animaisPerdidos')
+        ));
+    }
+    
 } 
