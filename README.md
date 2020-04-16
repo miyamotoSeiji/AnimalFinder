@@ -2,9 +2,9 @@
 
 Animal Finder é um aplicativo web para cadastro de animais de estimação perdidos, onde o dono do animal perdido se cadastra e informa os dados do seu pet.
 
-Todos os pets informados aparecem na página principal do aplicativo, caso alguém tenha noticias sobre algum pet exposto, poderá comunicar ao dono seu nome e telefone para que seja feito o contato.
+Todos os pets informados aparecem na página principal do aplicativo, caso alguém tenha notícias sobre algum pet exposto, poderá comunicar ao dono seu nome e telefone para que seja feito o contato.
 
-Este projeto foi desenvolvido exclusivamente como parte do processo seletivo para vaga de desenvolvedor.
+Este projeto foi desenvolvido exclusivamente como parte do processo seletivo para uma vaga de desenvolvedor.
 
 A documentação com as informações da atividade pode ser encontrada na pasta raiz desse repositório como "Novo Teste - Ruby.pdf".
 
@@ -15,9 +15,9 @@ O Backlog utilizado para o desenvolvimento deste aplicativo também pode ser enc
 Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.1 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19, Bootstrap na versão 4.4.1 e também o conjunto Font Awesome em seu kit gratuito.
 Todas as ferramentas utilizadas no projeto são distribuidas de forma livre e grátuita.
 
-Após a instalação do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
+Após a instalação do XAMPP é necessário criar o banco de dados relacional, para isso é preciso criar a base de dados "animal_finder" em localhost, em seguida rodar o script localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
 
-Em seguida é preciso clonar este repositório ( https://github.com/miyamotoSeiji/AnimalFinder.git ) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
+Após a configuração do banco de dados é preciso clonar este repositório ( https://github.com/miyamotoSeiji/AnimalFinder.git ) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
 
 Para ter acesso ao aplicativo em servidor local, acesse pelo navegador: http://localhost/AnimalFinder/
 
@@ -27,7 +27,8 @@ O sistema tem o propósito de atender dois tipos de usuario especificos:
 
 - O usuário que encontrou algum animal de estimação perdido e está a procura de seu dono. Neste tutorial será chamado de "Anjo".
 - O usuário que perdeu seu animal de estimação e está a procura do mesmo. Nesse tutorial será chamado de "Dono".
-- Os animais de estimação são uma entidade a parte. Nesse tutorial serão chamados de "pet"
+
+Os animais de estimação são uma entidade a parte. Nesse tutorial serão chamados de "pet"
 
 Para cada um dos usuários as funcionalidades são distintas:
 
