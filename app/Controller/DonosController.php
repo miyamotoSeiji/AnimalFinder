@@ -54,5 +54,11 @@ class DonosController extends AppController {
             $this->request->data = $dono;
         }
     }
+    
+    public function trocarSenha($id = null) {
+        $this->checkLogin();
+        $this->edit($id);
+        $this->request->data['Dono']['password'] = null;
+    }
 
 } 
