@@ -12,7 +12,7 @@
                 $this->Form->input('password', array('label' => 'Senha', 'class' => 'form-control')) 
             ) . 
             $this->Html->tag('span',
-                $this->Form->button('Entrar', array('type' => 'submit', 'class' => 'btn btn-success btn-lg'))
+                $this->Form->button('Entrar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg'))
             , array('style' => 'margin-left:8px;'))
         )
     );

@@ -109,3 +109,5 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+define('ROOT_URL', dirname(dirname(dirname(__FILE__))));

@@ -1,13 +1,13 @@
 <?php
     $donoLogado = $this->Session->read('donoLogado');
-    $botaoCadastrar = $this->Html->link('Cadastrar', '/cadastrar', array('class' => 'btn btn-primary', 'style' => array('margin-right:5px;')));
-    $botaoEntrar = $this->Html->link('Entrar', '/entrar', array('class' => 'btn btn-success'));
+    $botaoCadastrar = $this->Html->link('Cadastrar', '/cadastrar', array('class' => 'btn btn-outline-warning', 'style' => array('margin-right:5px;')));
+    $botaoEntrar = $this->Html->link('Entrar', '/entrar', array('class' => 'btn btn-outline-warning'));
     $botaoPerfil = null;
     if (!empty($donoLogado)) {
         $botaoCadastrar = null;
         $botaoEntrar = null;
         $botaoPerfil = $this->Html->div('btn-group',
-            $this->Html->tag('button', 'Olá ' . $donoLogado['Dono']['nome'], array('type' => 'button', 'class' => 'btn btn-success dropdown-toggle', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')) .
+            $this->Html->tag('button', $this->Html->tag('i', '', array('class' => 'fas fa-cat')) . ' Olá ' . $donoLogado['Dono']['nome'], array('type' => 'button', 'class' => 'btn btn-outline-warning dropdown-toggle', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')) .
             $this->Html->div('dropdown-menu', 
                 $this->Html->link('Alterar meus dados', '/donos/edit/' . $donoLogado['Dono']['id'], array('class' => 'dropdown-item')) .
                 $this->Html->div('dropdown-divider', '') .

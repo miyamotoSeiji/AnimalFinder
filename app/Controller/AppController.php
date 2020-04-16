@@ -33,8 +33,10 @@ class AppController extends Controller {
     public function paginateConditions() {
         $text = null;
         $donoLogado = $this->Session->read('donoLogado');
+        $conditions['Animal.status'] = 'Perdido';
         if (!empty($donoLogado)) {
             $conditions['Animal.dono_id'] = $donoLogado['Dono']['id'];
+            $conditions['Animal.status'] = array('Perdido', 'Comunicado', 'Encontrado');
         }
         
         return $conditions;
@@ -59,16 +61,6 @@ class AppController extends Controller {
     public $saveMethod = 'save';
     
     public $saveOptions = array();
-    
-    public function add() {
-        if (!empty($this->request->data[$this->modelClass])) {
-            $this->{$this->modelClass}->id = false;
-            if ($this->{$this->modelClass}->{$this->saveMethod}($this->request->data, $this->saveOptions)) {
-                $this->Flash->success(__('O cadastro foi salvo com sucesso!'));
-                $this->redirect('/index');
-            }
-        } 
-    }
-    
+
 }
 ?>

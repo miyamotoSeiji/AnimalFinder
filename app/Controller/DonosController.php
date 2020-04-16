@@ -4,7 +4,6 @@ class DonosController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if (!empty($this->request->data)) {
-                debug($this->request->data);
                 $password = md5($this->request->data['Dono']['password']);
                 $donoLogado = $this->Dono->find('first', array('conditions' => array('email' => $this->request->data['Dono']['email'], 'password' => $password)));
                 if (!empty($donoLogado)) {
@@ -34,13 +33,11 @@ class DonosController extends AppController {
             );
         }
     }
-    public function edit($id = null) {
-        if (!$id) {
-            throw new NotFoundException(__('Invalid post'));
-        }
 
-        $post = $this->Dono->findById($id);
-        if (!$post) {
+    public function edit($id = null) {
+        $this->checkLogin();
+        $dono = $this->Dono->findById($id);
+        if (!$dono) {
             throw new NotFoundException(__('Invalid post'));
         }
 
@@ -54,7 +51,7 @@ class DonosController extends AppController {
         }
 
         if (!$this->request->data) {
-            $this->request->data = $post;
+            $this->request->data = $dono;
         }
     }
 

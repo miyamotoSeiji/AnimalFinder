@@ -12,7 +12,7 @@
                 $this->Form->input('telefone', array('label' => 'Telefone', 'class' => 'form-control'))
             ) . 
             $this->Html->tag('span',
-                $this->Form->button('Alterar', array('type' => 'submit', 'class' => 'btn btn-success btn-lg')) . $this->Html->link('Voltar', '/animals/', array('class' => 'btn btn-primary btn-lg', 'style' => array('margin-left:5px;')))
+                $this->Form->button('Alterar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg')) . $this->Html->link('Voltar', '/animals/', array('class' => 'btn btn-outline-primary btn-lg', 'style' => array('margin-left:5px;')))
             , array('style' => 'margin-left:8px;'))
         )
     );

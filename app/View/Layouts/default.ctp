@@ -22,10 +22,12 @@ $cakeDescription = __d('cake_dev', 'Animal Finder');
 		
 		echo $this->Html->css('bootstrap.min');
 		echo $this->Html->css('bootstrap-grid.min');
-		echo $this->Html->css('bootstrap-reboot.min');
+        echo $this->Html->css('bootstrap-reboot.min');
+        //echo $this->Html->css('dropzone');
 		echo $this->Html->css('album');
 		echo $this->Html->script('jquery-1.11.1.min');
         echo $this->Html->script('jquery.maskedinput.min');
+        //echo $this->Html->script('dropzone');
 		echo $this->Html->script('bootstrap.bundle.min');
 		
 
