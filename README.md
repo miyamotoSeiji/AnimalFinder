@@ -1,15 +1,19 @@
-# CakePHP
+# Animal Finder
 
-[![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](https://travis-ci.org/cakephp/cakephp)
-[![Code consistency](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/grade.svg)](https://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/)
+Animal Finder é um aplicativo web para cadastro de animais de estimação perdidos, onde o dono do animal perdido se cadastra e informa os dados do seu pet.
+Todos os pets informados aparecem na página principal do aplicativo, caso alguém tenha noticias sobre algum pet exposto, poderá comunicar ao dono seu nome e telefone para que seja feito o contato.
+Este projeto foi desenvolvido exclusivamente como parte do processo seletivo para vaga de desenvolvedor.
+A documentação com as informações da atividade pode ser encontrada na pasta raiz desse repositório como "Novo Teste - Ruby.pdf".
+O Backlog utilizado para o desenvolvimento deste aplicativo também pode ser encontrado na raíz desse repositório como "Backlog AnimalFinder.xlsx
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
+## Instalação
 
+Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.3 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19.
+Após a intalção do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
+Em seguida é preciso clonar este repositório (https://github.com/miyamotoSeiji/AnimalFinder.git) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
+Para ter acesso ao aplicativo em localhost, acesse pelo navegador: http://localhost/AnimalFinder/
 
-## Some Handy Links
+continua...
 
 [CakePHP](https://cakephp.org) - The rapid development PHP framework
 

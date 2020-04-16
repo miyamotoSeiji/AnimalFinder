@@ -1,6 +1,5 @@
 <?php
 App::uses('AppModel', 'Model');
-App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class Dono extends AppModel {
        
@@ -13,6 +12,10 @@ class Dono extends AppModel {
             'required' => array(
                 'rule' => 'notBlank',
                 'message' => 'Informe o seu nome'
+            ), 
+            'minLengh' => array(
+                'rule' => array('minLength', 3),
+                'message' => 'O nome deve ter pelo menos 3 digitos'
             )
         ),
         'email' => array(
@@ -37,6 +40,10 @@ class Dono extends AppModel {
             'required' => array(
                 'rule' => 'notBlank',
                 'message' => 'Informe uma senha'
+            ),
+            'minLengh' => array(
+                'rule' => array('minLength', 4),
+                'message' => 'A senha deve ter pelo menos 4 digitos'
             )
         ),
         

@@ -15,6 +15,7 @@ class DonoTest extends AppModelTestCase {
 
     public function testInvalidNome() {
         $this->assertEqualsInvalidField('nome', null);
+        $this->assertEqualsInvalidField('nome', 'Br');
     }
 
     public function testInvalidEmail() {
@@ -29,7 +30,6 @@ class DonoTest extends AppModelTestCase {
 
     public function testInvalidSenha() {
         $this->assertEqualsInvalidField('password', null);
+        $this->assertEqualsInvalidField('password', '12');
     }
-               
-    
 }
