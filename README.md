@@ -183,7 +183,6 @@ Listarei nessa seção os problemas encontrados e melhorias que podem ser feitas
 + Melhorias	
 	+ As mensagens de notificação poderiam desaparecer após alguns segundos, liberando espaço em tela
 	+ Utilização do dropzone.js no upload de imagens, dessa forma, além de facilitar o carregamento da foto, seria possível ter um preview da imagem
-	+ Trocar senha do Dono, devido a criptografia da senha, somente é possível a substituição da senha e não a alteração
 	+ Melhorias visuais, tanto nos formulários quanto nas páginas principais, foi utilizado o bootstrap, mas não foi possível aproveitar todo seu potêncial
 
 ## Considerações finais

@@ -10,6 +10,7 @@
             $this->Html->tag('button', $this->Html->tag('i', '', array('class' => 'fas fa-cat')) . ' Olá ' . $donoLogado['Dono']['nome'], array('type' => 'button', 'class' => 'btn btn-outline-warning dropdown-toggle', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false')) .
             $this->Html->div('dropdown-menu', 
                 $this->Html->link('Alterar meus dados', '/donos/edit/' . $donoLogado['Dono']['id'], array('class' => 'dropdown-item')) .
+                $this->Html->link('Trocar senha', '/donos/trocarSenha/' . $donoLogado['Dono']['id'], array('class' => 'dropdown-item')) .
                 $this->Html->div('dropdown-divider', '') .
                 $this->Html->link('Sair', '/donos/logout', array('class' => 'dropdown-item')) 
             )
