@@ -83,7 +83,6 @@ class AnimalsController extends AppController {
     }
     
     public function encontrei($id = null) {
-        $this->checkLogin();
         $animal = $this->Animal->findById($id);
         if (!$animal) {
             throw new NotFoundException(__('Invalid post'));
