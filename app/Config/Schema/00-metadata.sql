@@ -13,25 +13,27 @@ CREATE TABLE `animals` (
   `info` text DEFAULT NULL,
   `cidade` varchar(255) DEFAULT NULL,
   `estado` char(2) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT 'Perdido',
+  `anjo_nome` varchar(255) DEFAULT NULL,
+  `anjo_telefone` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `animals_dono_fk` (`dono_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 DROP TABLE IF EXISTS `donos`;
 CREATE TABLE `donos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `telefone` varchar(255) DEFAULT NULL,
-  `senha` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `deleted` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 ALTER TABLE `animals`
 ADD CONSTRAINT `animals_dono_fk` FOREIGN KEY (`dono_id`) REFERENCES `donos` (`id`);

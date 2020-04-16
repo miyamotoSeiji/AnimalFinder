@@ -43,9 +43,11 @@ class AnimalsController extends AppController {
         if (!empty($this->request->data[$this->modelClass])) {
             $this->{$this->modelClass}->id = false;
             $this->request->data['Animal']['dono_id'] = $this->donoLogado['Dono']['id'];
-            new Folder(ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'], true, 0666);
-            copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . '.jpg');
-            $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
+            if (!empty($this->request->data['Animal']['foto'])) {
+                new Folder(ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'], true, 0666);
+                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . '.jpg');
+                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
+            }
             if ($this->Animal->save($this->request->data)) {
                 $this->Flash->success(__('O cadastro foi salvo com sucesso!'));
                 $this->redirect('/animals/index');
@@ -62,8 +64,12 @@ class AnimalsController extends AppController {
 
         if ($this->request->is(array('post', 'put'))) {
             $this->Animal->id = $id;
-            copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'file' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->donoLogado['Dono']['id'] . '.jpg');
-            $this->request->data['Animal']['foto'] = 'foto' . $this->donoLogado['Dono']['id'] . '.jpg';
+            if (!empty($this->request->data['Animal']['foto']['tmp_name'])) {
+                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . '.jpg');
+                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
+            } else {
+                unset($this->request->data['Animal']['foto']);
+            }
             if ($this->Animal->save($this->request->data)) {
                 $this->Flash->success(__('Dados Alterados.'));
                 $this->redirect('/animals/index');
@@ -77,7 +83,8 @@ class AnimalsController extends AppController {
     }
     
     public function encontrei($id = null) {
-         $animal = $this->Animal->findById($id);
+        $this->checkLogin();
+        $animal = $this->Animal->findById($id);
         if (!$animal) {
             throw new NotFoundException(__('Invalid post'));
         }
@@ -93,6 +100,23 @@ class AnimalsController extends AppController {
 
         if (!$this->request->data) {
             $this->request->data = $animal;
+        }
+    }
+    
+    public function statusEncontrado($id) {
+        $this->checkLogin();
+        if (!empty($id)) {
+            $this->Animal->id = $id;
+            $this->Animal->saveField('status', 'Encontrado');
+            $this->redirect('/Animals/index');
+        }
+    }
+    
+    public function comunicado($id) {
+        $this->checkLogin();
+        if (!empty($id)) {
+            $animal = $this->Animal->findById($id);
+            $this->set('animal', $animal);
         }
     }
     

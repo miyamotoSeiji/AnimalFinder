@@ -18,9 +18,16 @@ class Animal extends AppModel {
                 'message' => 'O nome deve ter pelo menos 3 digitos'
             )
         ),
-        //'foto' => array(
-//             'isUploadFile' => array('rule' => 'isUploadFile', 'message' => 'Não foi possível enviar foto.', 'last' => true)
-//        ),
+        'foto' => array(
+            'required' => array(
+                'rule' => 'notBlank',
+                'message' => 'Carregue uma imagem'
+            ),
+            'image' => array(
+                'rule' => array('extension', array('gif', 'jpeg', 'png', 'jpg')),
+                'message' => 'Carregue uma imagem válida'
+            )
+        ),
         'idade' => array(
             'required' => array(
                 'rule' => 'notBlank',
