@@ -7,7 +7,7 @@ class AnimalTest extends AppModelTestCase {
         'app.animal',
     );    
     
-    public $modelName = 'Dono';
+    public $modelName = 'Animal';
     
     public function testInstance() {
         $this->assertTrueInstance();
