@@ -13,7 +13,7 @@
             $botaoStatus = $this->Html->link('ENCONTREI!!!', '/animals/encontrei/' . $animal['Animal']['id'], array('class' => 'btn btn-outline-primary btn-sm'));    
             if (!empty($donoLogado)) {
                 $botaoAlterar = $this->Html->link('Alterar dados', '/animals/edit/' . $animal['Animal']['id'], array('class' => 'btn btn-outline-primary btn-sm'));
-                $botaoStatus = $this->Html->link('Encontrado', '/animals/statusEncontrado/' . $animal['Animal']['id'], array('class' => 'btn btn-outline-primary btn-sm'));
+                $botaoStatus = $this->Html->link('ENCONTREI!!!', '/animals/statusEncontrado/' . $animal['Animal']['id'], array('class' => 'btn btn-outline-primary btn-sm'));
                 if ($animal['Animal']['status'] == 'Encontrado') {
                     $botaoStatus = null;
                 }

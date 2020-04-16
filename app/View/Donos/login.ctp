@@ -12,7 +12,7 @@
                 $this->Form->input('password', array('label' => 'Senha', 'class' => 'form-control')) 
             ) . 
             $this->Html->tag('span',
-                $this->Form->button('Entrar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg'))
+                $this->Form->button('Entrar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg')) . $this->Html->link('Voltar', '/animals/', array('class' => 'btn btn-outline-primary btn-lg', 'style' => array('margin-left:5px;')))
             , array('style' => 'margin-left:8px;'))
         )
     );
