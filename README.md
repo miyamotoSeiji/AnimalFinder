@@ -12,9 +12,10 @@ O Backlog utilizado para o desenvolvimento deste aplicativo também pode ser enc
 
 ## Instalação
 
-Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.4 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19, Bootstrap na versão 4.4.1 e também o conjunto Font Awesome em seu kit gratuito.
+Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.1 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19, Bootstrap na versão 4.4.1 e também o conjunto Font Awesome em seu kit gratuito.
+Todas as ferramentas utilizadas no projeto são distribuidas de forma livre e grátuita.
 
-Após a intalção do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
+Após a instalação do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
 
 Em seguida é preciso clonar este repositório (https://github.com/miyamotoSeiji/AnimalFinder.git) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
 
@@ -179,7 +180,6 @@ Listarei nessa seção os problemas encontrados e melhorias que podem ser feitas
 
 + Issues
 	+ Validação no campo foto da entidade Animal, a validação para este campo não está funcionando, permitindo que o Dono realize a inclusão de qualquer tipo de arquivo, além de imagens
-	+ A versão Do XAMPP utilizada no desenvolvimento desse projeto foi a 3.2.4, dessa forma o PHP instalado está na versão 7.4.4, não sendo totalmente compativel com a versão do CakePHP 2.10.19, gerando problemas ao realizar os testes unitários. para solucionar o problema é romendado o uso do PHP na versão 5.6.4
 + Melhorias	
 	+ As mensagens de notificação poderiam desaparecer após alguns segundos, liberando espaço em tela
 	+ Utilização do dropzone.js no upload de imagens, dessa forma, além de facilitar o carregamento da foto, seria possível ter um preview da imagem
