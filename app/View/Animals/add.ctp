@@ -17,7 +17,7 @@
                             'error' => array('attributes' => array('wrap' => 'span', 'class' => 'text-danger'))
                         )
                     )). 
-                    $this->Html->div('col', $this->Form->input('foto', array('label' => 'Foto recente', 'class' => 'form-control', 'type' => 'file'))) .
+                    $this->Html->div('col', $this->Form->input('foto', array('label' => 'Foto recente', 'class' => 'form-control', 'type' => 'file', 'style' => 'height:44px;'))) .
                     $this->Form->create('Animal') .
                     $this->Html->div('row',
                         $this->Html->div('col', $this->Form->input('nome', array('label' => 'Nome', 'class' => 'form-control'))) .
