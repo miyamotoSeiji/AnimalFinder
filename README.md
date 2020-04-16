@@ -10,13 +10,9 @@ A documentação com as informações da atividade pode ser encontrada na pasta 
 
 O Backlog utilizado para o desenvolvimento deste aplicativo também pode ser encontrado na raíz desse repositório como "Backlog AnimalFinder.xlsx
 
-**Conteúdo**
-
-[TOCM]
-
 ## Instalação
 
-Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.3 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19, Bootstrap na versão 4.4.1 e também o conjunto Font Awesome em seu kit gratuito.
+Para o desenvolvimento desse projeto foi utilizado o pacote de servidores XAMPP na versão v3.2.4 utilizando os modulos MySQL e Apache, juntamente com o framework CakePHP na versão 2.10.19, Bootstrap na versão 4.4.1 e também o conjunto Font Awesome em seu kit gratuito.
 
 Após a intalção do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
 
@@ -115,4 +111,42 @@ Após o cadastro basta que o dono clique no botão "Cadastrar" ou caso queira vo
 
 ##### Cartão de informações do pet 
 
-...
+Na página principal, são exibidos todos os cartões de informação dos pets. 
+
+Para cada cartão de informações do pet haveram três ações possíveis:
+
+- Alterar dados, Onde o dono poderá modificar as informações relacionadas ao seu pet
+- "Encontrei", ao clicar o status do pet será alterado para "Encontrado"
+- "BOAS NOVAS!", quando este botão está presente no cartão, significa que algum Anjo tem informações sobre o pet, ao clicar nele o dono poderá visualiar o nome e telefone do Anjo
+
+##### Menu superior botão do Dono
+
+No menu superior, após o login haverá o botão do usuário, "Olá 'Dono'", ao clicar nele será mostrado duas opções:
+
+- Alterar meus dados, onde o dono poderá realizar alterações nas suas informações
+- Sair, ao clicar o dono sairá do sistema e retornará para a página de login
+
+## Issues e Melhorias
+
+Este projeto foi desenvolvido exclusivamanente como processo seletivo para a vaga de desenvolvedor, devido ao prazo estabelecido e falta de experiência, nem todas as funcionalidades estão funcionando 100%
+
+Listarei nessa seção os problemas encontrados e melhorias que podem ser feitas.
+
++ Issues
+	+ Validação no campo foto da entidade Animal, a validação para este campo não está funcionando, permitindo que o Dono realize a inclusão de qualquer tipo de arquivo, além de imagens
+	+ A versão Do XAMPP utilizada no desenvolvimento desse projeto foi a 3.2.4, dessa forma o PHP instalado está na versão 7.4.4, não sendo totalmente compativel com a versão do CakePHP 2.10.19, gerando problemas ao realizar os testes unitários. para solucionar o problema é romendado o uso do PHP na versão 5.6.4
++ Melhorias	
+	+ Utilização do dropzone.js no upload de imagens, dessa forma, além de facilitar o carregamento da foto, seria possível ter um preview da imagem
+	+ Trocar senha do Dono, devido a criptografia da senha, somente é possível a substituição da senha e não a alteração
+	+ Melhorias visuais, tanto nos formulários quanto nas páginas principais, foi utilizado o bootstrap, mas não foi possível aproveitar todo seu potêncial
+
+## Considerações finais
+
+Gostaria de agradecer pela oportunidade de mostrar um pouquinho do meu conhecimento em programação, é claro que eu gostaria que o prazo fosse maior, mas entendo que na vida real nem sempre temos esse tempo e que precisamos nos virar com o que temos da melhor forma possível.
+
+Gostei muito de participar desse processo seletivo, reaprendi muitas coisas que há tempos não utilizava e aprendi coisas novas também. Caso tenha tempo, continuarei a desenvolver esse projeto como forma terapêutica, pois acima de tudo foi muito divertido!!! E Também sei que há muito a ser melhorado.
+
+Com certeza independente do resultado, estou muito satisfeito por ter participado, mas é claro que adoraria fazer parte da equipe Yapay.
+
+Novamente muito obrigado!!!
+
