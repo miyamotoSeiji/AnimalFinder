@@ -17,7 +17,7 @@ Todas as ferramentas utilizadas no projeto são distribuidas de forma livre e gr
 
 Após a instalação do XAMPP é necessário criar o banco de dados relacional, para isso foi gerado um script que pode ser localizado neste repositório em: AnimalFinder/app/Config/Schema/00-metadata.sql
 
-Em seguida é preciso clonar este repositório (https://github.com/miyamotoSeiji/AnimalFinder.git) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
+Em seguida é preciso clonar este repositório ( https://github.com/miyamotoSeiji/AnimalFinder.git ) na pasta "htdocs" localizada dentro do diretório de instalação do XAMPP.
 
 Para ter acesso ao aplicativo em servidor local, acesse pelo navegador: http://localhost/AnimalFinder/
 
