@@ -32,6 +32,10 @@ class Animal extends AppModel {
             'required' => array(
                 'rule' => 'notBlank',
                 'message' => 'Informe a idade do seu animal'
+            ), 
+            'numeric' => array(
+                'rule' => 'numeric',
+                'message' => 'Please supply the number of cars.'
             )
         ),
         'cidade' => array(
@@ -77,43 +81,4 @@ class Animal extends AppModel {
             )
         ),
     );
-    
-    //public function isUploadFile($check) {
-//        $isUpload = false;
-//        $files = array_values($check);    
-//        $fieldNames = array_keys($check);
-//        if (!empty($files[0])) {
-//            $isUpload = true;
-//            if (is_array($files[0])) {
-//                $fileName = $this->getUploadedFile($files[0]);
-//                CakeLog::notice(json_encode($fileName));
-//                $isUpload = !empty($fileName);
-//                if ($isUpload) {
-//                    $this->data[$this->name][$fieldNames[0]] = $fileName;
-//                }
-//            }
-//        }
-//        
-//        return $isUpload;
-//    }
-//        
-//    public function getUploadedFile($file) {
-//        $uploaded = '';
-//        clearstatcache();
-//        if ((isset($file['error']) && $file['error'] == 0) || (!empty($file['tmp_name']) && $file['tmp_name'] != 'none')) {
-//            $uploadedFileTemp = $file['tmp_name'];
-//            if (is_uploaded_file($uploadedFileTemp)) {
-//                $nomeArquivoDestino = $this->getNomeArquivoDestino($file['name']);  
-//                if (file_exists($nomeArquivoDestino)) {
-//                    unlink($nomeArquivoDestino);
-//                }
-//                if (move_uploaded_file($uploadedFileTemp, $nomeArquivoDestino)) { 
-//                    $uploaded = basename($file['name']);
-//                }                
-//            }
-//        } 
-//        
-//        return $uploaded;   
-//    }
-        
 }
