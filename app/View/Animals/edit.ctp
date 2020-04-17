@@ -6,7 +6,7 @@
         $this->Html->div('container',
             $this->Html->div('col-md-8 offset-md-2',
                 $this->Html->tag('fieldset',
-                    $this->Html->tag('legend', 'Cadastro de animal perdito', array('class' => 'text-center')) .
+                    $this->Html->tag('legend', 'Alterar dados do animal perdito', array('class' => 'text-center')) .
                     $this->Form->create('Animal', array(
                         'default' => true,
                         'type' => 'file',
@@ -32,7 +32,7 @@
                     )
                 ) . 
                 $this->Html->tag('span',
-                    $this->Form->button('Cadastrar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg')) . $this->Html->link('Voltar', '/animals/', array('class' => 'btn btn-outline-primary btn-lg', 'style' => array('margin-left:5px;')))
+                    $this->Form->button('ALterar', array('type' => 'submit', 'class' => 'btn btn-outline-success btn-lg')) . $this->Html->link('Excluir', '/animals/delete/' . $this->request->data['Animal']['id'], array('class' => 'btn btn-outline-danger btn-lg', 'style' => array('margin-left:5px;'))) . $this->Html->link('Voltar', '/animals/', array('class' => 'btn btn-outline-primary btn-lg', 'style' => array('margin-left:5px;')))
                 , array('style' => 'margin-left:15px;')) .
                 $this->Form->end()
             )

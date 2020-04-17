@@ -33,13 +33,15 @@ class AppController extends Controller {
     public function paginateConditions() {
         $text = null;
         $donoLogado = $this->Session->read('donoLogado');
-        $conditions['Animal.status'] = 'Perdido';
+        $paginateConditions['Animal.status'] = 'Perdido';
+        $paginateConditions = $this->paginate['conditions'];
         if (!empty($donoLogado)) {
-            $conditions['Animal.dono_id'] = $donoLogado['Dono']['id'];
-            $conditions['Animal.status'] = array('Perdido', 'Comunicado', 'Encontrado');
+            $paginateConditions['Animal.dono_id'] = $donoLogado['Dono']['id'];
+            $paginateConditions['Animal.status'] = array('Perdido', 'Comunicado', 'Encontrado');
         }
         
-        return $conditions;
+        
+        return $paginateConditions;
     }
     
     public function paginateOrder() {

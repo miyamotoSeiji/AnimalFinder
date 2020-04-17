@@ -21,7 +21,7 @@ class AnimalsController extends AppController {
             'Animal.anjo_nome',
             'Animal.anjo_telefone',
         ),
-        'conditions' => array('Animal.excluido' => 'N'),
+        'conditions' => array('Animal.deleted IS NULL'),
         'limit' => 9,
         'order' => array('Animal.id' => 'desc')
     );
@@ -79,6 +79,15 @@ class AnimalsController extends AppController {
 
         if (!$this->request->data) {
             $this->request->data = $animal;
+        }
+    }
+    
+    public function delete($id = null) {
+        $this->checkLogin();
+        if (!empty($id)) {
+            $this->Animal->id = $id;
+            $this->Animal->saveField('deleted', date('Y-m-d H:i:s'));
+            $this->redirect('/Animals/index');
         }
     }
     
