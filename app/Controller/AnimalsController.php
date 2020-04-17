@@ -45,8 +45,8 @@ class AnimalsController extends AppController {
             $this->request->data['Animal']['dono_id'] = $this->donoLogado['Dono']['id'];
             if (!empty($this->request->data['Animal']['foto'])) {
                 new Folder(ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'], true, 0666);
-                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . '.jpg');
-                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
+                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . date('dmYHis') . '.jpg');
+                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . date('dmYHis') . '.jpg';
             }
             if ($this->Animal->save($this->request->data)) {
                 $this->Flash->set('O cadastro foi salvo com sucesso!', array('params' => array('class' => 'alert alert-success')));
@@ -65,8 +65,8 @@ class AnimalsController extends AppController {
         if ($this->request->is(array('post', 'put'))) {
             $this->Animal->id = $id;
             if (!empty($this->request->data['Animal']['foto']['tmp_name'])) {
-                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . '.jpg');
-                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . '.jpg';
+                copy($this->request->data['Animal']['foto']['tmp_name'], ROOT_URL . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . 'perdidos' . DIRECTORY_SEPARATOR . $this->donoLogado['Dono']['id'] . DIRECTORY_SEPARATOR . 'foto' . $this->request->data['Animal']['nome'] . date('dmYHis') . '.jpg');
+                $this->request->data['Animal']['foto'] = 'foto' . $this->request->data['Animal']['nome'] . date('dmYHis') . '.jpg';
             } else {
                 unset($this->request->data['Animal']['foto']);
             }

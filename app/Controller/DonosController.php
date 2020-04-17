@@ -38,7 +38,6 @@ class DonosController extends AppController {
         if (!$dono) {
             throw new NotFoundException(__('Invalid post'));
         }
-
         if ($this->request->is(array('post', 'put'))) {
             $this->Dono->id = $id;
             if ($this->Dono->save($this->request->data)) {
