@@ -188,11 +188,11 @@ Listarei nessa seção os problemas encontrados e melhorias que podem ser feitas
 
 ## Considerações finais
 
-Gostaria de agradecer pela oportunidade de mostrar um parte do meu conhecimento em programação, é claro que eu gostaria que o prazo fosse maior, mas entendo que na vida real nem sempre temos esse tempo e que precisamos nos virar com o que temos da melhor forma possível.
+Gostaria de agradecer pela oportunidade de mostrar parte do meu conhecimento em programação, é claro que eu gostaria que o prazo fosse maior, mas entendo que na vida real nem sempre temos esse tempo e que precisamos nos virar com o que temos da melhor forma possível.
 
-Gostei muito de participar desse processo seletivo, reaprendi muitas coisas que há tempos não utilizava e aprendi coisas novas também. Caso tenha tempo, continuarei a desenvolver esse projeto como forma terapêutica, pois acima de tudo foi muito divertido!!! E Também sei que há muito a ser melhorado.
+Gostei muito de participar desse processo seletivo, reaprendi muitas coisas que há tempos não utilizava e aprendi coisas novas também. Caso tenha tempo, continuarei a desenvolver esse projeto como forma terapêutica, pois acima de tudo, foi muito divertido!!! E Também sei que há muito a ser melhorado.
 
-Com certeza independente do resultado, estou muito satisfeito por ter participado, mas é claro que adoraria fazer parte da equipe Yapay.
+Com certeza independente do resultado, estou muito satisfeito por ter participado, mas é claro que adoraria fazer parte da família Yapay.
 
 Novamente muito obrigado!!!
 
