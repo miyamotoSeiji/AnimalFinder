@@ -87,6 +87,7 @@ class AnimalsController extends AppController {
         if (!empty($id)) {
             $this->Animal->id = $id;
             $this->Animal->saveField('deleted', date('Y-m-d H:i:s'));
+            $this->Flash->set('Animal excluido com sucesso!.', array('params' => array('class' => 'alert alert-success')));
             $this->redirect('/Animals/index');
         }
     }
