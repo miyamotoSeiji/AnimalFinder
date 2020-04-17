@@ -25,7 +25,7 @@ class Animal extends AppModel {
             ),
             'image' => array(
                 'rule' => array('extension', array('gif', 'jpeg', 'png', 'jpg')),
-                'message' => 'Carregue uma imagem v·lida'
+                'message' => 'Carregue uma imagem v√°lida'
             )
         ),
         'idade' => array(
@@ -35,7 +35,7 @@ class Animal extends AppModel {
             ), 
             'numeric' => array(
                 'rule' => 'numeric',
-                'message' => 'Please supply the number of cars.'
+                'message' => 'Informe apenas n√∫meros.'
             )
         ),
         'cidade' => array(
@@ -57,17 +57,17 @@ class Animal extends AppModel {
         'info' => array(
             'required' => array(
                 'rule' => 'notBlank',
-                'message' => 'Descreva seu animal e a situaÁ„o em que ele se perdeu.'
+                'message' => 'Descreva seu animal e a situa√ß√£o em que ele se perdeu.'
             ),
             'minLengh' => array(
                 'rule' => array('minLength', 10),
-                'message' => 'A informaÁ„o deve ter pelo menos 10 digitos'
+                'message' => 'A informa√ß√£o deve ter pelo menos 10 digitos'
             )
         ),
         'anjo_nome' => array(
             'required' => array(
                 'rule' => 'notBlank',
-                'message' => 'Descreva seu animal e a situaÁ„o em que ele se perdeu.'
+                'message' => 'Descreva seu animal e a situa√ß√£o em que ele se perdeu.'
             ),
             'minLengh' => array(
                 'rule' => array('minLength', 3),
@@ -77,7 +77,7 @@ class Animal extends AppModel {
         'anjo_telefone' => array(
             'required' => array(
                 'rule' => 'notBlank',
-                'message' => 'Descreva seu animal e a situaÁ„o em que ele se perdeu.'
+                'message' => 'Descreva seu animal e a situa√ß√£o em que ele se perdeu.'
             )
         ),
     );
