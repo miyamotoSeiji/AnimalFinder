@@ -21,7 +21,7 @@ class AnimalsController extends AppController {
             'Animal.anjo_nome',
             'Animal.anjo_telefone',
         ),
-        'conditions' => array('Animal.deleted IS NULL'),
+        'conditions' => array('Animal.deleted IS NULL', 'Animal.status' => 'Perdido'),
         'limit' => 9,
         'order' => array('Animal.id' => 'desc')
     );
