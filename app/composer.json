@@ -8,15 +8,15 @@
 		{
 			"name": "Bruno Seiji Miyamoto",
 			"homepage": "https://github.com/miyamotoSeiji",
-            "email": "021miyamoto@gmail.com
+            "email": "021miyamoto@gmail.com"
 		}
 	],
 	"support": {
-		"issues": "https://github.com/miyamotoSeiji/AnimalFinder/issues",,
-		"source": "https://github.com/miyamotoSeiji/AnimalFinder",
+		"issues": "https://github.com/miyamotoSeiji/AnimalFinder/issues",
+		"source": "https://github.com/miyamotoSeiji/AnimalFinder"
 	},
 	"require": {
-		"php": ">=5.3.0 <=5.6.4",
+		"php": ">=5.3.0 <=5.6.8",
 		"ext-mcrypt": "*",
 		"cakephp/cakephp": "~2.9"
 	},
